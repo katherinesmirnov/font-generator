@@ -1,0 +1,38 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "julia",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/Program",
+      "stopOnEntry": false
+    },
+    {
+      "type": "julia",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceFolder}/Program",
+      "stopOnEntry": false
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
+      "request": "launch",
+      "args": [],
+      "stopAtEntry": false,
+      "externalConsole": true,
+      "cwd": "c:/Users/ksmir/Desktop/fonts",
+      "program": "c:/Users/ksmir/Desktop/fonts/build/Debug/outDebug",
+      "MIMode": "gdb",
+      "miDebuggerPath": "gdb",
+      "setupCommands": [
+        {
+          "description": "Enable pretty-printing for gdb",
+          "text": "-enable-pretty-printing",
+          "ignoreFailures": true
+        }
+      ]
+    }
+  ]
+}
