@@ -150,30 +150,42 @@ function writeSentence(str)
     for word in words[2:end]
         prevoffSet = writeWord(word, prevoffSet + SPACESIZE)
     end
-    display(p)
+    
+    if saveToPDF savefig(p, "plot.pdf") 
+    else display(p) end
+
     print("Done\n")
 end
 
 function runByInput()
-    print("Provide a sentence: ")
+    print("Provide a statement: ")
     input = readline()
+    if isempty(input)
+        return 
+    end
+
     println()
 
     writeSentence(input)
 
-    println("\n(^C to close program)")
-    readline()
-end
-
-function writealpha()
-    str = ""
-    for key in sort(collect(keys(coordinates)))
-        str *= key
+    if !saveToPDF
+        println("\n(enter anything to close program)")
+        readline()
     end
 
-    writeSentence(str)    
 end
 
+
+
+function collectCommandArguments(args)
+    if length(args) == 0
+        return false
+    elseif args[1] == "-p"
+        return true
+    else
+        error("Invalid command line arguments")
+    end
+end
+
+saveToPDF = collectCommandArguments(ARGS)
 runByInput()
-# writeSentence("this is a sentence")
-# writealpha()
